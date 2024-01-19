@@ -5770,7 +5770,7 @@
     "nativeName": "Deutschland",
     "numericCode": "276",
     "flags": {
-      "svg": "https://flagcdn.com/de.svg",
+      "svg": "https://flagcdn.com /de.svg",
       "png": "https://flagcdn.com/w320/de.png"
     },
     "currencies": [

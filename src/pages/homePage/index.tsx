@@ -1,19 +1,34 @@
-import { CardList } from "../../components/cardsList"
+import { useEffect, useState } from "react"
+import { CardList } from "../../components/cardList"
+import { SearchBar } from "../../components/searchBar"
+import { GetDatas } from "../../service/handleApi"
+import { iCards } from "../../interface/iCards"
+import { OptionSelect } from "../../components/optionSelect"
+import "./style.css";
 
 const HomePage = () => {
+    const [search, setSearch] = useState<string>("")
+    const [selection, setSelection] = useState<string>("all")
+    const [countries, setCountries] = useState<iCards[]>([])
+
+    useEffect(() => {
+        const FetchData = async (): Promise<void> => {
+            const datas:iCards[] = await GetDatas()
+            setCountries([...datas])
+        }
+        FetchData()
+
+     }, [])
+
     return (
         <main>
             <div>
-                <input type="text" placeholder="Searche for  a country.." />
-                <select name="filterCountry" id="">
-                    <option value="Brazil">Brazil</option>
-                    <option value="EUA">EUA</option>
-                </select>
+                <SearchBar search={search} setSearch={setSearch}/>
+                <OptionSelect selection={selection} setSelection={setSelection}/>
             </div>
             <section>
-                <CardList/>
+                <CardList search={search} countries={countries} selection={selection}/>
             </section>
-
         </main>
     )
 }

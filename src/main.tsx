@@ -6,17 +6,19 @@ import { Card } from './pages/details/index.tsx';
 import App from './App.tsx';
 import { ErrorPage } from './pages/ErrorPage/index.tsx';
 
+
 // 1 - config router
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
     // 3- ErrorPage
-    errorElement:<ErrorPage/>,
+    
     children:[
       {
         path: "/",
         element: <HomePage/>,
+        errorElement:<ErrorPage/>,
       },
       // {
       //   path: "/details",
@@ -26,7 +28,8 @@ const router = createBrowserRouter([
       // 5 - nested routes - unic index
       {
         path:`details/:id`,
-        element: <Card/>
+        element: <Card/>,
+        errorElement:<ErrorPage/>,
       },
 
       // // 7 - navigate for page non-existent page
