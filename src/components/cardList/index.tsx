@@ -10,11 +10,12 @@ interface CountriesCardProps {
 }
 
 export const CardList = ({ countries, search, selection }: CountriesCardProps) => {
+    
     const CountryAll = ((countries: iCards[]) => {
 
-        if (selection == "all") { return countries }
-
-        return countries.filter( (countries) => { countries.region === selection })
+        if (selection == "all") return countries
+        
+        return countries.filter( (countries) => { return countries.region === selection })
     })
 
     const filteredCountries = CountryAll
@@ -30,7 +31,7 @@ export const CardList = ({ countries, search, selection }: CountriesCardProps) =
                     }
                     ).map((country, index) => {
                         return (
-                            < Link to={`/details/${country.cca3}`} key={index}>
+                            < Link className="card" to={`/details/${country.cca3}`} key={index}>
                                 <img src={country.flags.png} alt={country.flags.alt} />
                                 <h3>{country.name.common}</h3>
                                 <p>Population: {country.population}</p>

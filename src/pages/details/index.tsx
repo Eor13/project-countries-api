@@ -54,6 +54,7 @@ export const Card = () => {
     const handleContact = () => {
         return navigate("/")
     }
+    console.log(information.borders)
     return (
         <>
             
@@ -69,20 +70,15 @@ export const Card = () => {
             
             <p>Languages: {Object.values(information.languages)[0]} </p>
             <p>Border Countries:
-                {information.borders.map((neighborCountry,index) =>{
-                    if(neighborCountry.length > 0){
-                        return(
-                            <Link to={`/details/${neighborCountry}`}  key={index}>
-                                <span> {neighborCountry} </span>
-                            </Link>
-                        )
-
-                    }else{
-                        return(
-                            <span key={index}>Não existe país com divisa territórial. É uma <strong> ilha! </strong></span>
-                        )
-                    }
-                })}
+                { information.borders !== undefined ?(information.borders.map((neighborCountry,index) =>{
+                    return(
+                        <Link to={`/details/${neighborCountry}`}  key={index}>
+                            <span> {neighborCountry} </span>
+                        </Link>
+                    )})
+                ):(
+                    <span>Não existe país com divisa territórial. É uma <strong> ilha! </strong></span>
+                )}
             </p>
 
             <button onClick={handleContact}>Back</button>
