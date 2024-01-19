@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { iCards } from "../../interface/iCards";
-import "./style.css";
 
 
 interface CountriesCardProps {
