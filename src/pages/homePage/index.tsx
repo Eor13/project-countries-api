@@ -3,6 +3,7 @@ import { CardList } from "../../components/cardList"
 import { SearchBar } from "../../components/searchBar"
 import { GetDatas } from "../../service/handleApi"
 import { iCards } from "../../interface/iCards"
+import { OptionSelect } from "../../components/optionSelect"
 
 const HomePage = () => {
     const [search, setSearch] = useState<string>("")
