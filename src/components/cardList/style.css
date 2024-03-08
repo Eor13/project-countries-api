@@ -1,0 +1,8 @@
+#card-list{
+    width: 23%;
+}
+
+#card-list .image-card-list{
+    height: 160px;
+    width: 100%;
+}

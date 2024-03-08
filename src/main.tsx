@@ -5,6 +5,7 @@ import { HomePage } from './pages/homePage/index.tsx';
 import { Card } from './pages/details/index.tsx';
 import App from './App.tsx';
 import { ErrorPage } from './pages/ErrorPage/index.tsx';
+import 'bootstrap/dist/css/bootstrap.min.css'; //Aplica o Bootstrap css
 
 
 // 1 - config router

@@ -4,6 +4,8 @@ import { SearchBar } from "../../components/searchBar"
 import { GetDatas } from "../../service/handleApi"
 import { iCards } from "../../interface/iCards"
 import { OptionSelect } from "../../components/optionSelect"
+import { Container, Row } from "react-bootstrap"
+
 
 const HomePage = () => {
     const [search, setSearch] = useState<string>("")
@@ -20,15 +22,14 @@ const HomePage = () => {
      }, [])
 
     return (
-        <main>
-            <div>
-                <SearchBar search={search} setSearch={setSearch}/>
+        <Container className="d-flex flex-column">
+            <Row lg={4} sm={4} className="d-flex justify-content-between px-2 mb-4">
+                <SearchBar search={search} setSearch={setSearch} />
                 <OptionSelect selection={selection} setSelection={setSelection}/>
-            </div>
-            <section>
-                <CardList search={search} countries={countries} selection={selection}/>
-            </section>
-        </main>
+            </Row>
+            
+            <CardList search={search} countries={countries} selection={selection}/>
+        </Container>
     )
 }
 

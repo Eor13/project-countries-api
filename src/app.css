@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap");
+
+:root {
+  --LightDarkBlue: hsl(209, 23%, 22%); /* (Dark Mode Elements)*/
+  --DarkBlue: hsl(207, 26%, 17%); /* (Dark Mode Background)*/
+  --VeryDarkBlue: hsl(200, 15%, 8%); /* (Light Mode Text)*/
+  --grayGray: hsl(0, 0%, 52%); /* (Light Mode Input)*/
+  --VeryLightGray: hsl(0, 0%, 98%); /* (Light Mode Background)*/
+  --White: hsl(0, 0%, 100%); /* (Dark Mode Text & Light Mode Elements)*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  box-sizing: border-box;
+  max-width: 1440px;
+}
+
+[data-bs-theme="blue"] {
+  --bs-body-color: var(--VeryLightGray);
+  --bs-body-color-rgb: #{to-rgb($white)};
+  --bs-body-bg: var(--DarkBlue);
+  --bs-body-bg-rgb: #{to-rgb($blue)};
+  --bs-tertiary-bg: #{$blue-600};
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{mix($blue-500, $blue-600)};
+    --bs-dropdown-link-active-bg: #{$blue-700};
+  }
+
+  .btn-secondary {
+    --bs-btn-bg: #{mix($gray-600, $blue-400, 0.5)};
+    --bs-btn-border-color: #{rgba($white, 0.25)};
+    --bs-btn-hover-bg: #{darken(mix($gray-600, $blue-400, 0.5), 5%)};
+    --bs-btn-hover-border-color: #{rgba($white, 0.25)};
+    --bs-btn-active-bg: #{darken(mix($gray-600, $blue-400, 0.5), 10%)};
+    --bs-btn-active-border-color: #{rgba($white, 0.5)};
+    --bs-btn-focus-border-color: #{rgba($white, 0.5)};
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.2);
+  }
+  --bs-body-color: #{$body-color-dark};
+  /* --#{$prefix}body-color-rgb: #{to-rgb($body-color-dark)};
+  --#{$prefix}body-bg: #{$body-bg-dark};
+  --#{$prefix}body-bg-rgb: #{to-rgb($body-bg-dark)};
+
+  --#{$prefix}emphasis-color: #{$body-emphasis-color-dark};
+  --#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color-dark)};
+
+  --#{$prefix}secondary-color: #{$body-secondary-color-dark};
+  --#{$prefix}secondary-color-rgb: #{to-rgb($body-secondary-color-dark)};
+  --#{$prefix}secondary-bg: #{$body-secondary-bg-dark};
+  --#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg-dark)};
+
+  --#{$prefix}tertiary-color: #{$body-tertiary-color-dark};
+  --#{$prefix}tertiary-color-rgb: #{to-rgb($body-tertiary-color-dark)};
+  --#{$prefix}tertiary-bg: #{$body-tertiary-bg-dark};
+  --#{$prefix}tertiary-bg-rgb: #{to-rgb($body-tertiary-bg-dark)};
+
+  @each $color, $value in $theme-colors-text-dark {
+    --#{$prefix}#{$color}-text-emphasis: #{$value};
+  }
+
+  @each $color, $value in $theme-colors-bg-subtle-dark {
+    --#{$prefix}#{$color}-bg-subtle: #{$value};
+  }
+
+  @each $color, $value in $theme-colors-border-subtle-dark {
+    --#{$prefix}#{$color}-border-subtle: #{$value};
+  }
+
+  --#{$prefix}heading-color: #{$headings-color-dark};
+
+  --#{$prefix}link-color: #{$link-color-dark};
+  --#{$prefix}link-hover-color: #{$link-hover-color-dark};
+  --#{$prefix}link-color-rgb: #{to-rgb($link-color-dark)};
+  --#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color-dark)};
+
+  --#{$prefix}code-color: #{$code-color-dark};
+  --#{$prefix}highlight-color: #{$mark-color-dark};
+  --#{$prefix}highlight-bg: #{$mark-bg-dark};
+
+  --#{$prefix}border-color: #{$border-color-dark};
+  --#{$prefix}border-color-translucent: #{$border-color-translucent-dark};
+
+  --#{$prefix}form-valid-color: #{$form-valid-color-dark};
+  --#{$prefix}form-valid-border-color: #{$form-valid-border-color-dark};
+  --#{$prefix}form-invalid-color: #{$form-invalid-color-dark};
+  --#{$prefix}form-invalid-border-color: #{$form-invalid-border-color-dark}; */
+}
+
+/* [data-bs-theme=dark] {
+    color: var(--VeryLightGray);
+    background-color: var(--DarkBlue);
+}
+
+[data-bs-theme=light] {
+    color: var(--DarkBlue);
+    background-color: var(--VeryLightGray);
+} */

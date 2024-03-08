@@ -1,3 +1,5 @@
+import { Form } from "react-bootstrap";
+
 interface SelectProps{
     selection:string;
     setSelection: (event:string) => void
@@ -6,9 +8,10 @@ interface SelectProps{
 
 export const OptionSelect = ({selection, setSelection}:SelectProps) => {
     return (
-        <select 
+        <Form.Select size="lg"
             onChange={(e) =>{setSelection(e.target.value)}} 
             value={selection}
+            className="col-3 w-25"
         >
             <option className="region" value="all">Filter By region</option>
             <option className="region" value="Africa">Africa</option>
@@ -16,6 +19,6 @@ export const OptionSelect = ({selection, setSelection}:SelectProps) => {
             <option className="region" value="Asia">Asia</option>
             <option className="region" value="Europe">Europe</option>
             <option className="region" value="Oceania">Oceania</option>
-        </select>
+        </Form.Select>
     )
 }
