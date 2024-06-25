@@ -3,24 +3,22 @@ import { Outlet } from "react-router-dom"
 import { NavBar } from "./components/navBar-Page"
 import Container from 'react-bootstrap/Container';
 import "./app.css";
-import { ProviderProps, createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
-export type Theme = "dark" | "light"
-export const ThemeContext = createContext<Theme>("dark")
 
-export const useGetTheme = () => useContext(ThemeContext)
+const ThemeContext = createContext("dark")
 
 function App() {
    const [theme, setTheme] = useState("dark")
-
   return (
     <>
         <Container fluid className="d-flex flex-column m-auto">
-          <ThemeContext.Provider value={{theme, setTheme}}>
-            <NavBar setTheme={setTheme} theme ={theme}/>
-            <div className='mb-4 invisible' style={{ height: 140 }} ></div>
-            <Outlet />
-
+          <ThemeContext.Provider value={theme}>
+            <div>
+              <NavBar setTheme={setTheme} theme={theme}/>
+              <div className='mb-4 invisible' style={{ height: 140 }} ></div>
+              <Outlet />
+            </div>
           </ThemeContext.Provider>
         </Container>
     </>

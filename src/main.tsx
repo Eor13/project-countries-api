@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from './pages/homePage/index.tsx';
 import { Card } from './pages/details/index.tsx';
-import App from './App.tsx';
+import App from './App.js';
 import { ErrorPage } from './pages/ErrorPage/index.tsx';
 import 'bootstrap/dist/css/bootstrap.min.css'; //Aplica o Bootstrap css
 
